@@ -1,4 +1,9 @@
+require('dotenv').config();
+
 const puppeteer = require('puppeteer');
+const { MAIL } = process.env;
+const { PASSWORD } = process.env;
+const { FOLDERPATH } = process.env;
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -9,8 +14,8 @@ const puppeteer = require('puppeteer');
   await page.goto('https://pc.moppy.jp/');
 
   await page.click(".login > a");
-  await page.type("input[name='mail']", "daiki.7634@gmail.com");
-  await page.type("input[name='pass']", "7634");
+  await page.type("input[name='mail']", MAIL);
+  await page.type("input[name='pass']", PASSWORD);
   await page.click(".m-btn-form__item > button");
   
   await page.click(".modal-top__later");
@@ -25,7 +30,7 @@ const puppeteer = require('puppeteer');
   await page.click(".delete > a");
   await page.click(".banner > a");
 
-  await page.screenshot({path: '/Users/gotoudaiki/Pictures/screenshot.png'});
+  await page.screenshot({path: FOLDERPATH});
 
   await browser.close();
 })();

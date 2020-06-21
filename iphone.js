@@ -26,7 +26,10 @@ const { FOLDERPATHIPHONE } = process.env;
   await page.click(".a-moppy-gacha__btn");
   await page.click(".a-moppy-gacha__btn");
   await page.click(".popup-block__delete");
-  await page.screenshot({path: FOLDERPATHIPHONE});
+  await page.screenshot({
+    path: FOLDERPATHPC,
+    fullPage: true,
+  });
   
   const newPage = await browser.newPage();
   await newPage.emulate(iPhone);

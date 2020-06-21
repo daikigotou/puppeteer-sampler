@@ -3,7 +3,7 @@ require('dotenv').config();
 const puppeteer = require('puppeteer');
 const { MAIL } = process.env;
 const { PASSWORD } = process.env;
-const { FOLDERPATH } = process.env;
+const { FOLDERPATHPC } = process.env;
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -30,7 +30,7 @@ const { FOLDERPATH } = process.env;
   await page.click(".delete > a");
   await page.click(".banner > a");
 
-  await page.screenshot({path: FOLDERPATH});
+  await page.screenshot({path: FOLDERPATHPC});
 
   await browser.close();
 })();

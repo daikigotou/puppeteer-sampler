@@ -8,7 +8,7 @@ const { FOLDERPATHPC } = process.env;
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
-    slowMo: 500
+    slowMo: 300
   })
   const page = await browser.newPage();
   await page.goto('https://pc.moppy.jp/');
@@ -28,9 +28,8 @@ const { FOLDERPATHPC } = process.env;
   
   page.waitFor(10000);
   await page.click(".delete > a");
-  await page.click(".banner > a");
-
   await page.screenshot({path: FOLDERPATHPC});
+  await page.click(".banner > a");
 
   await browser.close();
 })();

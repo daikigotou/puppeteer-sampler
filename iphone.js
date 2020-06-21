@@ -9,7 +9,6 @@ const { FOLDERPATHIPHONE } = process.env;
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
-    slowMo: 300
   })
   const page = await browser.newPage();
   await page.emulate(iPhone);

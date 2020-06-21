@@ -27,7 +27,7 @@ const { FOLDERPATHIPHONE } = process.env;
   await page.click(".a-moppy-gacha__btn");
   await page.click(".popup-block__delete");
   await page.screenshot({
-    path: FOLDERPATHPC,
+    path: FOLDERPATHIPHONE,
     fullPage: true,
   });
   

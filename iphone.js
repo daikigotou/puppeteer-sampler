@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const puppeteer = require('puppeteer');
-const iPhone = puppeteer.devices['iPhone 8'];
+const iPhone = puppeteer.devices['iPhone X'];
 const { MAIL } = process.env;
 const { PASSWORD } = process.env;
 const { FOLDERPATHIPHONE } = process.env;

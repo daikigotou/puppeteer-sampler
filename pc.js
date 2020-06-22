@@ -8,6 +8,7 @@ const { FOLDERPATHPC } = process.env;
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
+    slowMo: 500,
   })
   const page = await browser.newPage();
   await page.goto('https://pc.moppy.jp/');

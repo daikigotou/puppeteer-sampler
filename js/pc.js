@@ -26,7 +26,7 @@ const { FOLDERPATHPC } = process.env;
   page.waitFor(".click-end > a");
   await page.click(".click-end > a");
   
-  page.waitFor(10000);
+  page.waitFor(".delete > a");
   await page.click(".delete > a");
   await page.screenshot({
     path: FOLDERPATHPC,
